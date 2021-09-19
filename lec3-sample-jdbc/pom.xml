@@ -5,7 +5,7 @@
     <artifactId>trsis.jdbc</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>lec3 Trsis sample with jdbc</name>
+    <name>Lecture 3 Trsis sample with jdbc</name>
     <url>http://maven.apache.org</url>
 
 
