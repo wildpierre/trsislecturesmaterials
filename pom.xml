@@ -20,6 +20,7 @@
         <module>lec2-sample-simple-servlet</module>
         <module>lec2-sample-with-form</module>
         <module>lec2-sample-with-jsp</module>
+        <module>lec3-sample-jdbc</module>
     </modules>
 
 </project>
