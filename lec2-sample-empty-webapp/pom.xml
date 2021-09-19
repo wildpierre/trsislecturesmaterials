@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>info.stepanoff.trsis.lec2</groupId>
+    <artifactId>trsis.servlet.webapp.empty</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>Lecture 2 Trsis Servlet Sample Maven Empty Webapp</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>trsis-servlet-webapp-empty</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven3-plugin</artifactId>
+                <version>1.9.7</version>
+                <configuration>
+                    <container>
+                        <containerId>tomcat9x</containerId>
+                        <type>embedded</type>
+                    </container>
+                    <deployables>
+                        <deployable>
+                            <type>war</type>
+                            <location>${project.build.directory}/${project.build.finalName}.war</location>
+                            <properties>
+                                <context>/sample</context>
+                            </properties>
+                        </deployable>
+                    </deployables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
