@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="school-unit" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>info.stepanoff.trsis.samples.db.model.School</class>
+        <class>info.stepanoff.trsis.samples.db.model.Batch</class>
+        
+        <shared-cache-mode>ALL</shared-cache-mode>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:demo;create=true" />
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name = "hibernate.show_sql" value = "false" />
+
+            <property name="hibernate.c3p0.min_size" value="5" />
+            <property name="hibernate.c3p0.max_size" value="20" />
+            <property name="hibernate.c3p0.timeout" value="500" />
+            <property name="hibernate.c3p0.max_statements" value="5000" />
+            <property name="hibernate.c3p0.idle_test_period" value="2000" />            
+            
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="javax.persistence.schema-generation.create-source"  value="script"/>
+            <property name="javax.persistence.schema-generation.create-script-source"  value="META-INF/sql/init.sql" />
+            <property name="javax.persistence.sql-load-script-source"  value="META-INF/sql/fill.sql" />
+            <property name="javax.persistence.schema-generation.drop-source" value="script" />
+            <property name="javax.persistence.schema-generation.drop-script-source" value="META-INF/sql/drop.sql" />
+
+        </properties>
+    </persistence-unit>
+</persistence>
