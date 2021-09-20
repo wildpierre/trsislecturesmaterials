@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+        <title>Schools in our university</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="js/schools.js"></script>
+
+    </head>
+    <body ng-app="schools" ng-controller="SchoolsController">
+
+        <h1>Факультеты</h1>
+
+        <div ng-controller="getSchools" ng-show="schoolsList.length > 0">
+            <table id="schoolsTable">
+                <thead>
+                    <tr>
+                        <th>ИД</th>
+                        <th>Номер</th>
+                        <th>Название</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="school in schoolsList" id="{{school.id}}">
+                        <td>{{school.id}}</td>
+                        <td>{{school.number}}</td>
+                        <td>{{school.name}}</td>
+                        <td><input type="button" value="Удалить" ng-click="delete(school.id)"/></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <form role="form" ng-submit="addSchool()">
+                <div>
+                    <label>Номер</label>
+                    <div>
+                        <input type="text" name="number" ng-model="number" />
+                    </div>
+                </div>
+                <div >
+                    <label >Название</label>
+                    <div>
+                        <input type="text" name="name" ng-model="name" />
+                    </div>
+                </div>	
+                <div>								
+                    <div>
+                        <input type="submit" value="Добавить"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
