@@ -89,8 +89,11 @@ public class DBHelper {
     public static void deleteSchool(Integer id) throws SQLException {
 
         PreparedStatement stmt = getDeleteSchoolStatement();
-        stmt.setInt(1, id);
-        stmt.executeUpdate();
+
+        synchronized (stmt) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        }
         System.out.println("delete executed");
         //autocommit
     }
@@ -110,9 +113,11 @@ public class DBHelper {
     public static void addSchool(Integer number, String name) throws SQLException {
 
         PreparedStatement stmt = getAddSchoolStatement();
-        stmt.setInt(1, number);
-        stmt.setString(2, name);
-        stmt.executeUpdate();
+        synchronized (stmt) {
+            stmt.setInt(1, number);
+            stmt.setString(2, name);
+            stmt.executeUpdate();
+        }
         System.out.println("øòûóêå executed");
         //autocommit
     }
@@ -134,18 +139,20 @@ public class DBHelper {
         List<Batch> result = new LinkedList<>();
 
         PreparedStatement stmt = getBatchStatement();
-        stmt.setInt(1, schoolId);
+        synchronized (stmt) {
 
-        try (ResultSet rs = stmt.executeQuery()) {
-            while (rs.next()) {
+            stmt.setInt(1, schoolId);
 
-                int id = rs.getInt("BATCH_ID");
-                String number = rs.getString("BATCH_NUMBER");
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
 
-                Batch batch = new Batch(id, number);
+                    int id = rs.getInt("BATCH_ID");
+                    String number = rs.getString("BATCH_NUMBER");
 
-                result.add(batch);
+                    Batch batch = new Batch(id, number);
 
+                    result.add(batch);
+                }
             }
         }
 

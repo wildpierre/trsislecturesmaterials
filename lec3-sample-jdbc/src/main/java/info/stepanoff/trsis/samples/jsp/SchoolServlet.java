@@ -82,7 +82,9 @@ public class SchoolServlet extends javax.servlet.http.HttpServlet {
             response.getWriter().write("</a>");
             response.getWriter().write("</td>");
             response.getWriter().write("<td>");
-            response.getWriter().write("<a href=\"school?command=delete&id=" + fakultet.getId().toString() + "\">удалить</a>");
+            response.getWriter().write("<a href=\"school?command=delete&id=");
+            response.getWriter().write(fakultet.getId().toString());
+            response.getWriter().write("\">удалить</a>");
             response.getWriter().write("</td>");
             response.getWriter().write("</tr>");
         }
