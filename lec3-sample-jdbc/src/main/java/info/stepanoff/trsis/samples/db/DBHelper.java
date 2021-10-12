@@ -118,7 +118,7 @@ public class DBHelper {
             stmt.setString(2, name);
             stmt.executeUpdate();
         }
-        System.out.println("רעûףךו executed");
+        System.out.println("add executed");
         //autocommit
     }
 

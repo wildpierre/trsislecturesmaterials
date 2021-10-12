@@ -23,6 +23,7 @@
         <module>lec3-sample-jdbc</module>
         <module>lec4-sample-jpa</module>
         <module>lec5-sample-jpa-repo</module>
+        <module>lec6-simple-secure-app</module>
     </modules>
 
 </project>
