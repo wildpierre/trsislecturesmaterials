@@ -2,9 +2,14 @@ Materials for lectures
 
 tested with JDK 15
 
-to run use command
+to run webapp use command
 
 mvn clean package cargo:run
+
+to run spring app use command
+
+mvn clean package spring-boot:run
+
 
 Webapp path is http://localhost:8080/sample
 
