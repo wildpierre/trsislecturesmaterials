@@ -135,7 +135,7 @@
                     <storetype>PKCS12</storetype>
                     <keyalg>RSA</keyalg>
                     <keysize>2048</keysize>
-                    <keystore>${project.basedir}/target/keystore.p12</keystore>
+                    <keystore>${project.basedir}/target/classes/keystore.p12</keystore>
                     <dname>CN=stepanoff.info, OU=stepanoff.info, O=stepanoff.info, L=SPB, ST=SPB, C=NO</dname>
                     <validity>3650</validity>
                     <password>mypassword</password>
