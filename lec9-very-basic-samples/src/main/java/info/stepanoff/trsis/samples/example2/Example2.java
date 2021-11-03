@@ -4,8 +4,8 @@
  */
 
 /*
- * пример 2.
- * Демонстрация применения совета, замещающего исходный код.
+ * Sample 2.
+ * Simple instead of advice.
  */
 package info.stepanoff.trsis.samples.example2;
 

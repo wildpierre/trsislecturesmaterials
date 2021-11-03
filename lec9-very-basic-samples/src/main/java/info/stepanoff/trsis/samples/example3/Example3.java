@@ -3,8 +3,8 @@
  * https://www.gnu.org/licenses/gpl-3.0.en.html
  */
 /*
- * пример 3.
- * Демонстрация советов разных типов
+ * Sample 3.
+ * Demo on various types of advices
  */
 package info.stepanoff.trsis.samples.example3;
 

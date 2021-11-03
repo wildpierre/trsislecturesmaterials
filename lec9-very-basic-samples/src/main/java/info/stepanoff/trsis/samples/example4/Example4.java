@@ -3,8 +3,8 @@
  * https://www.gnu.org/licenses/gpl-3.0.en.html
  */
 /*
- * пример 4.
- * ƒемонстраци€ применени€ простого среза.
+ * Sample 4.
+ * Demo of simple Pointcut.
  */
 package info.stepanoff.trsis.samples.example4;
 

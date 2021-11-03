@@ -3,8 +3,8 @@
  * https://www.gnu.org/licenses/gpl-3.0.en.html
  */
 /*
- * пример 5.
- * Демонстрация применения среза - регулярного выражения.
+ * Sample 5.
+ * Simple RegEx PointCut.
  */
 package info.stepanoff.trsis.samples.example5;
 
