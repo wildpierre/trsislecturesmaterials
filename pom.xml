@@ -25,6 +25,9 @@
         <module>lec5-sample-jpa-repo</module>
         <module>lec6-simple-secure-app</module>
         <module>lec7-simple-thymeleaf</module>
+        <module>lec9-sample-aop</module>
+        <module>lec9-very-basic-samples</module>
+
 
     </modules>
 
