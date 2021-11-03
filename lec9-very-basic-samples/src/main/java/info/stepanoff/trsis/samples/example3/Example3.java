@@ -27,7 +27,7 @@ public class Example3 {
         ProxyFactory pf = new ProxyFactory();
         
         pf.addAdvice(new MethodInterceptorExample("Interceptor1"));       
-        pf.addAdvice(new MethodÂeforeAdviceExample());
+        pf.addAdvice(new MethodBeforeAdviceExample());
         pf.addAdvice(new MethodInterceptorExample("Interceptor2"));               
         pf.addAdvice(new AfterReturningAdviceExample());
         pf.addAdvice(new MethodInterceptorExample("Interceptor3"));        
