@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+        <title>Schools in our university</title>
+
+        <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
+
+
+        <script th:src="@{/js/jquery-3.6.0.min.js}" src="../static/js/jquery-3.6.0.min.js"></script>
+        <script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+        <script th:src="@{/js/angular.min.js}" src="../static/js/angular.min.js"></script>
+
+        <script th:src="@{/js/schools.js}" src="js/schools.js"></script>
+
+    </head>
+
+    <body ng-app="schools" ng-controller="SchoolsController">
+
+        <div th:replace="fragments/header.html :: header">
+
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Здесь будет заголовок</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Здесь будет ссылка</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h1 class="text-center" th:text="#{schools.schools}">Здесь будет слово "факультеты" на языке локали</h1>
+
+        <div class="alert alert-danger" role="alert" ng-show="errormessage">{{errormessage}}</div>
+
+        <div class="card">
+            <div class="card-body">
+
+                <div ng-controller="getSchools" ng-show="schoolsList.length > 0">
+                    <table id="schoolsTable" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ИД</th>
+                                <th>Номер</th>
+                                <th>Название</th>
+                                <th>Действие</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="school in schoolsList" id="{{school.id}}">
+                                <td>{{school.id}}</td>
+                                <td>{{school.number}}</td>
+                                <td><a href='batches/{{school.id}}'>{{school.name}}</a></td>
+                                <td><div sec:authorize="hasAuthority('ADMIN_USER')"><input type="button"  class="btn btn-primary" value="Delete" ng-click="deleteSchool(school.id)" th:value="#{schools.delete}"/></div></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form role="form" ng-submit="addSchool()" sec:authorize="hasAuthority('ADMIN_USER')">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label th:text="#{schools.number}" for="inputnumber">Number</label>
+                            <input class="form-control" type="text" name="number" ng-model="inputnumber" id="inputnumber"/>
+                        </div>
+                        <div class="form-group">
+                            <label th:text="#{schools.name}" for="inputname">Name</label>
+                            <input class="form-control" type="text" name="name" ng-model="inputname"  id="inputname"/>
+                        </div>	
+                        <div>								
+                            <input type="submit" class="btn btn-primary" value="Add" th:value="#{schools.add}"/>
+                        </div>
+                    </div>
+            </form>
+        </div>
+        </div>
+    </body>
+</html>

@@ -27,7 +27,8 @@
         <module>lec7-simple-thymeleaf</module>
         <module>lec9-sample-aop</module>
         <module>lec9-very-basic-samples</module>
-
+        <module>lec10-sample-jta</module>
+                                       
 
     </modules>
 
