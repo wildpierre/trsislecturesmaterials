@@ -34,12 +34,9 @@ public class SchoolRestService {
 
     @ApiOperation(value = "View a list of all available schools", response = Iterable.class)
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "Successfully retrieved list")
-        ,
-        @ApiResponse(code = 401, message = "You are not authorized to view the resource")
-        ,
-        @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden")
-        ,
+        @ApiResponse(code = 200, message = "Successfully retrieved list"),
+        @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
+        @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
         @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     }
     )
@@ -49,12 +46,9 @@ public class SchoolRestService {
 
     @ApiOperation(value = "Remove a school by ID", response = Iterable.class)
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "Successfully removed")
-        ,
-        @ApiResponse(code = 401, message = "You are not authorized to view the resource")
-        ,
-        @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden")
-        ,
+        @ApiResponse(code = 200, message = "Successfully removed"),
+        @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
+        @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
         @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     }
     )
@@ -70,7 +64,7 @@ public class SchoolRestService {
     }
 
     @RequestMapping(value = "/mockdelete/{id}", method = RequestMethod.GET)
-    public void mockdelete(@PathVariable("id") Integer id,  Principal principal) {
+    public void mockdelete(@PathVariable("id") Integer id, Principal principal) {
         if (principal == null) {
             throw new ForbiddenException();
         }
@@ -79,7 +73,7 @@ public class SchoolRestService {
     }
 
     @RequestMapping(value = "/{number}/{name}", method = RequestMethod.POST)
-    public ResponseEntity<Object> add(@PathVariable("number") Integer number, @PathVariable("name") String name,  Principal principal) {
+    public ResponseEntity<Object> add(@PathVariable("number") Integer number, @PathVariable("name") String name, Principal principal) {
         if (principal == null) {
             throw new ForbiddenException();
         }
@@ -89,15 +83,12 @@ public class SchoolRestService {
 
     @ApiOperation(value = "Find a school by number", response = Iterable.class)
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "Successfully found")
-        ,
-        @ApiResponse(code = 401, message = "You are not authorized to view the resource")
-        ,
-        @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden")
-        ,
+        @ApiResponse(code = 200, message = "Successfully found"),
+        @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
+        @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
         @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     }
-    )    
+    )
     @RequestMapping(value = "/{number}", method = RequestMethod.GET)
     public ResponseEntity<Object> findByNumber(@PathVariable("number") Integer number) {
         return ResponseEntity.ok(schoolService.findByNumber(number));

@@ -1,8 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * this code is available under GNU GPL v3
+ * https://www.gnu.org/licenses/gpl-3.0.en.html
  */
+
 package info.stepanoff.trsis.lec2.trsisjspsample;
 
 /**

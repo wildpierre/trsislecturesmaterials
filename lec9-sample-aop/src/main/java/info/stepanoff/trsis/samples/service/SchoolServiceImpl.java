@@ -36,6 +36,9 @@ public class SchoolServiceImpl implements SchoolService {
         return schoolRepository.save(new School(number, name));
     }
 
-
+    @Override
+    public School findByNumber(Integer number) {
+        return schoolRepository.findByNumber(number);
+    }
 
 }

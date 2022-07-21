@@ -13,5 +13,7 @@ public interface SchoolService {
     void delete(Integer id);
     
     School add(Integer number, String name);
+    
+    School findByNumber(Integer number);    
 
 }

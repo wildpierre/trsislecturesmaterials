@@ -24,7 +24,7 @@ public class DBHelper {
         if (conn != null) {
             return conn;
         }
-        String dbUrl = "jdbc:derby:memory:demo;create=true";
+        String dbUrl = "jdbc:h2:mem:testdb";
         conn = DriverManager.getConnection(dbUrl);
         return conn;
     }

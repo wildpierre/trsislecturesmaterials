@@ -65,7 +65,7 @@ app.controller("SchoolsController", function ($scope, $http) {
 
     $scope.successAddSchoolCallback = function (response) {
 
-        $http.get('/public/rest/schools/' + $scope.inputnumber).then($scope.successGetSchoolCallback, $scope.errorGetSchoolCallback);
+        $http.get('/public/rest/schools/' + $scope.number).then($scope.successGetSchoolCallback, $scope.errorGetSchoolCallback);
         $scope.errormessage = "";
     };
 
@@ -81,7 +81,7 @@ app.controller("SchoolsController", function ($scope, $http) {
     };
 
     $scope.addSchool = function () {
-        $http.post('/public/rest/schools/' + $scope.inputnumber + "/" + $scope.inputname).then($scope.successAddSchoolCallback, $scope.errorAddSchoolCallback);
+        $http.post('/public/rest/schools/' + $scope.number + "/" + $scope.name).then($scope.successAddSchoolCallback, $scope.errorAddSchoolCallback);
     };
 
 });

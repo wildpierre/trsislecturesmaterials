@@ -24,6 +24,4 @@ public class User {
     @Column(name="pass_hash", nullable = false)
     private String passHash;
 
-
-
 }

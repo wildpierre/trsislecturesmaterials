@@ -16,7 +16,7 @@ app.controller("SchoolsController", function ($scope, $http) {
     };
 
     $scope.delete = function (id) {
-        $http.delete('/public/rest/schools/delete/' + id).success(function (data, status, headers, config) {
+        $http.delete('/public/rest/schools/' + id).success(function (data, status, headers, config) {
             for (var i = 0; i < $scope.schoolsList.length; i++) {
                 var j = $scope.schoolsList[i];
                 if (j.id === id) {
@@ -30,7 +30,7 @@ app.controller("SchoolsController", function ($scope, $http) {
     };
 
     $scope.addSchool = function () {
-        $http.post('/public/rest/schools/add/' + $scope.number + "/" + $scope.name).success(function (data, status, headers, config) {
+        $http.post('/public/rest/schools/' + $scope.number + "/" + $scope.name).success(function (data, status, headers, config) {
             $scope.schoolsList.splice(0, 0, data);
         }
         ).error(function (data, status, headers, config) {

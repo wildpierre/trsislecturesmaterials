@@ -6,3 +6,9 @@
 /lec9-very-basic-samples/target/
 /lec10/target/
 /lec10-sample-jta/target/
+/lec2-sample-empty-webapp/target/
+/lec2-sample-simple-servlet/target/
+/lec2-sample-with-form/target/
+/lec2-sample-with-jsp/target/
+/lec7-simple-thymeleaf/target/
+/lec9-sample-aop/target/
