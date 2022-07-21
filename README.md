@@ -1,6 +1,6 @@
 Materials for lectures
 
-tested with JDK 15
+tested with JDK 17
 
 to run webapp use command
 
