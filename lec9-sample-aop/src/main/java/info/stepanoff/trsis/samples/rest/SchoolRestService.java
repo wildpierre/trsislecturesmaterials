@@ -4,6 +4,7 @@
  */
 package info.stepanoff.trsis.samples.rest;
 
+import info.stepanoff.trsis.samples.security.NeedRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -53,6 +54,7 @@ public class SchoolRestService {
     }
     )
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @NeedRole(roleRegex = "ADMIN_USER")
     public void delete(@PathVariable("id") Integer id, Principal principal) {
 
         if (principal == null) {
@@ -72,6 +74,7 @@ public class SchoolRestService {
         schoolService.delete(id);
     }
 
+    @NeedRole(roleRegex = "ADMIN_USER")
     @RequestMapping(value = "/{number}/{name}", method = RequestMethod.POST)
     public ResponseEntity<Object> add(@PathVariable("number") Integer number, @PathVariable("name") String name, Principal principal) {
         if (principal == null) {
